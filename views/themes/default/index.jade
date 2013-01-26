@@ -1,0 +1,31 @@
+extends layout
+
+block content
+	body.home-page
+		.header-wrapper
+			.header
+		.homepage-container
+			.slideshow
+				#slideshow
+					.slide
+						h2 Hatch Catch Online chat
+						.slide-image
+				// #slideshow
+			
+			.login-box
+				.inner-padding
+					h3 Sign in using
+					p
+						a#twitbutt.sb.sb-small.sb-twitter(href="/auth/twitter") 
+							i 
+							| Twitter
+						em or
+						a#fbbutt.sb.sb-small.sb-facebook(href="/auth/facebook") 
+							i
+							| facebook
+
+			// #login-box 
+		// .homepage-container
+		include footer
+		// JavaScript at the bottom for fast page loading 
+

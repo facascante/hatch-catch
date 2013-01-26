@@ -1,0 +1,35 @@
+extends layout
+
+block content
+	body.home-page
+		.header-wrapper
+			.header
+			.users
+		.select-room-container.box-container.clearfix
+			.inner-padding.clearfix
+				-if(users.gender != 'male' || users.gender != 'female'){
+				img.logo(src=users.photourl, width='217', height='239', alt='Logo')
+				-}
+				-else{
+				.logo-male
+					input(type='checkbox', name='gender', value='male', style='align:center;margin-top:40px; width:40px; height:40px;')
+				em or
+				.logo-female
+					input(type='checkbox', name='gender', value='female', style='align:center;margin-top:40px; width:40px; height:40px;')
+				-}
+				.clear
+				.create-room-block
+					h4
+						em Do not blow your cover! :)
+					form(method="POST",action="/option")
+						p
+							input.text-grey(type='text', name='room_name', value='', placeholder='Your preferred Codename')
+						input.button(type='submit', value='Codename')
+
+
+
+		include footer
+		script
+			$('#hide-inactive').click(function(ev) {
+				$('.room-list').toggleClass('hide-inactive');
+			});

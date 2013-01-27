@@ -1,0 +1,21 @@
+extends layout
+
+block content
+	body.home-page
+		.header-wrapper
+			.header
+			.users
+				p Hi, 
+					=users.first_name
+				img.avatar(src=users.photourl)
+		.select-room-container-chat.box-container-chat.clearfix
+			.inner-padding-chat.clearfix
+		
+		img.avatar-previous
+		img.avatar-present
+			
+		include footer
+		script
+			$('#hide-inactive').click(function(ev) {
+				$('.room-list').toggleClass('hide-inactive');
+			});

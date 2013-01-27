@@ -1,0 +1,21 @@
+extends layout
+
+block content
+	body.home-page
+		.header-wrapper
+			.header
+			.users
+				p Hi, 
+					=users.first_name
+				img.avatar(src=users.photourl)
+		.select-room-container.box-container.clearfix
+			.inner-padding.clearfix
+				h2 WE FOUND YOUR MATCH!
+				div(style='width:150px;height:150px;border:1px solid #000;margin-left:100px;margin-top:50px;')
+				p(style='float:right;z-index:1000') Apple Diap
+
+		include footer
+		script
+			$('#hide-inactive').click(function(ev) {
+				$('.room-list').toggleClass('hide-inactive');
+			});

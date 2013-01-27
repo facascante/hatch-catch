@@ -1,0 +1,24 @@
+extends layout
+
+block content
+	body.home-page
+		.header-wrapper
+			.header
+			.users
+				p Hi, 
+					=users.code_name
+				img.avatar(src=users.photourl)
+		.select-room-container.box-container.clearfix
+			.inner-padding.clearfix
+				img(src='img/spinner.gif',style='align:center;margin-top:55px;')#spinner
+				h2(style='text-decoration:blink;') Waiting for your match!
+				
+		include footer
+		script
+			$('#hide-inactive').click(function(ev) {
+				$('.room-list').toggleClass('hide-inactive');
+			});
+
+			$(document).ready(function() {
+				$('#spinner').show();
+			});

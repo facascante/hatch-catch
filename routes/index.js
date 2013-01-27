@@ -68,7 +68,58 @@ app.get('/logout', function(req, res){
  */
 
 app.all('/option', utils.restrict, function(req, res) {
-	res.render('option', {users:req.user });
+	if(req.method == "POST"){
+		req.user.code_name = req.body.code_name;
+		res.redirect('/waiting');
+		
+	}
+	else{
+		res.render('option', {users:req.user });
+	}
+});
+
+/*
+ * Found Match Page
+ */
+
+app.all('/found', utils.restrict, function(req, res) {
+  utils.getPublicRoomsInfo(client, function(rooms) {
+	
+    res.render('found', { rooms: rooms, users:req.user });
+  });
+});
+
+/*
+ * Score Window Page
+ */
+
+app.all('/score', utils.restrict, function(req, res) {
+  utils.getPublicRoomsInfo(client, function(rooms) {
+	
+    res.render('score', { rooms: rooms, users:req.user });
+  });
+});
+
+/*
+ * Chat Window Page
+ */
+
+app.all('/cwindow', utils.restrict, function(req, res) {
+  utils.getPublicRoomsInfo(client, function(rooms) {
+	
+    res.render('cwindow', { rooms: rooms, users:req.user });
+  });
+});
+
+
+/*
+ * Waiting Page
+ */
+
+app.all('/waiting', utils.restrict, function(req, res) {
+  utils.getPublicRoomsInfo(client, function(rooms) {
+    res.render('waiting', { rooms: rooms, users:req.user });
+  });
 });
 
 /*
@@ -77,8 +128,9 @@ app.all('/option', utils.restrict, function(req, res) {
 
 app.get('/rooms', utils.restrict, function(req, res) {
   utils.getPublicRoomsInfo(client, function(rooms) {
+
+		res.render('room_list', { rooms: rooms, users:req.user });
 	
-    res.render('room_list', { rooms: rooms, users:req.user });
   });
 });
 

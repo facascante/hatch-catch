@@ -936,6 +936,15 @@ p span.date {
   background: #fff;
   border: 1px solid #ccc;
 }
+
+.box-container-chat {
+  border-radius: 2px;
+  background: #fff;
+  border: 1px solid #ccc;
+}
+
+square { width: 100px; height: 100px; background: red; } 
+
 img {
   height: auto;
   width: auto;
@@ -949,6 +958,13 @@ body.home-page .inner-padding {
   padding-top: 2em;
   height: 310px;
 }
+
+body.home-page .inner-padding-chat {
+  padding: 5em;
+  padding-top: 1em;
+  height: 200px;
+}
+
 body.home-page .homepage-container {
   width: 824px;
   padding-top: 5em;
@@ -986,6 +1002,22 @@ body.home-page .header-wrapper .users .avatar {
     margin: -78px 200px auto auto;
 }
 
+body.home-page .avatar-previous { 
+    background: url("/img/previous.jpg") no-repeat center transparent; 
+    background-size: contain;
+    position: left;
+    height: 150px;
+    width: 150px;
+    margin: -375px 0px auto auto;
+}
+
+body.home-page .avatar-present { 
+    background: url("/img/previous.jpg"); 
+    background-size: contain;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
 
 body.home-page .homepage-container .login-box {
   background: #fff;
@@ -1074,6 +1106,14 @@ body.home-page .sign-in-twitter {
   display: block;
   text-indent: -1000em;
 }
+
+body.home-page .select-room-container-chat {
+  width: 500px;
+  margin: auto;
+  margin-top: 15em;
+  text-align: center;
+}
+
 body.home-page .select-room-container {
   width: 600px;
   margin: auto;

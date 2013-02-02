@@ -117,8 +117,16 @@ app.all('/cwindow', utils.restrict, function(req, res) {
  */
 
 app.all('/waiting', utils.restrict, function(req, res) {
-  utils.getPublicRoomsInfo(client, function(rooms) {
-    res.render('waiting', { rooms: rooms, users:req.user });
+  utils.getRegisteredUser(req,res,client, function(count) {
+	  console.log(count);
+	  if(count >= 6){
+	    res.redirect('/cwindow');
+	  }
+	  else{
+		  utils.setRegisteredUser(req,res,client,req.user, function() {
+		      res.render('waiting', { users:req.user });
+		  });
+	  }
   });
 });
 

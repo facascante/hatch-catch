@@ -83,6 +83,7 @@ exports.getRoomInfo = function(req, res, client, fn) {
 };
 
 exports.getPublicRoomsInfo = function(client, fn) {
+	
   client.smembers('balloons:public:rooms', function(err, publicRooms) {
     var rooms = []
       , len = publicRooms.length;
@@ -116,6 +117,7 @@ exports.getPublicRoomsInfo = function(client, fn) {
  */
 
 exports.getUsersInRoom = function(req, res, client, room, fn) {
+	console.log('rooms:' + req.params.id + ':online');
   client.smembers('rooms:' + req.params.id + ':online', function(err, online_users) {
     var users = [];
 
@@ -143,6 +145,7 @@ exports.getUsersInRoom = function(req, res, client, room, fn) {
  */
 
 exports.getPublicRooms = function(client, fn){
+	console.log("balloons:public:rooms");
   client.smembers("balloons:public:rooms", function(err, rooms) {
     if (!err && rooms) fn(rooms);
     else fn([]);
@@ -153,6 +156,7 @@ exports.getPublicRooms = function(client, fn){
  */
 
 exports.getUserStatus = function(user, client, fn){
+	console.log('users:' + user.provider + ":" + user.username + ':status');
   client.get('users:' + user.provider + ":" + user.username + ':status', function(err, status) {
     if (!err && status) fn(status);
     else fn('available');
@@ -176,6 +180,30 @@ exports.enterRoom = function(req, res, room, users, rooms, status){
   });
   res.render('room');
 };
+
+
+/*
+ * Register user to Redis 
+ */
+
+exports.setRegisteredUser = function(req, res, client, user, fn){
+	console.log('code goes here');
+	console.log(JSON.stringify(user));
+	 client.sadd('balloons:users', JSON.stringify(user));
+	 fn();
+};
+
+/*
+ * Get Registered user from Redis 
+ */
+
+exports.getRegisteredUser = function(req, res, client, fn){
+	 
+	 client.smembers('balloons:users', function(err, users) {
+		 fn(users.length);
+	 });
+};
+
 
 /*
  * Sort Case Insensitive

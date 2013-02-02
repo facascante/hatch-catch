@@ -3,12 +3,12 @@
     "twitter": {
       "consumerkey" : "yourConsumerKey",
       "consumersecret" : "yourSecretKey",
-      "callback" : "http://127.0.0.1:6789/auth/twitter/callback"
+      "callback" : "http://54.251.65.218:6789/auth/twitter/callback"
     },
     "facebook": {
-      "clientid" : "329613163813777",
-      "clientsecret" : "05fd646b7ba719c7a64a6f2608d4fc86",
-      "callback" : "http://172.20.10.8:6789/auth/facebook/callback"
+      "clientid" : "467043153353662",
+      "clientsecret" : "18d38d5044dc1b3beecd8ca778a1456e",
+      "callback" : "http://54.251.65.218:6789/auth/facebook/callback"
     }
   },
   "theme": {
@@ -21,3 +21,4 @@
     "port": 6789
   }
 }
+

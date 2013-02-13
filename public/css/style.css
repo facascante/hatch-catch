@@ -70,23 +70,10 @@ body.chat-page {
 }
 
 .gender-container .choose-gender-box {
-	background: url("/img/hc-theme/gender-box.png") no-repeat scroll 53% -157px transparent;
+	background: url("/img/hc-theme/gender-box.png") no-repeat scroll 51.5% 35px transparent;
 	background-size: -moz-calc();
 	height: 400px;
 	
-}
-
-.gender-container .choose-gender-box h1 {
-	color : white;
-	padding: 4% 0 0 42%;
-	line-height:0.5
-	;
-}
-
-.gender-container .choose-gender-box p {
-	color : white;
-	padding: 0 0 0 43%;
-	line-height:1;
 }
 
 .gender-container .choose-gender-box input {
@@ -95,7 +82,7 @@ body.chat-page {
 }
 
 .gender-container .choose-gender-box .username-wrapper {
-	padding: 12.5% 38% 29% 40%;
+	padding: 36px 47px 0 65%;
 	
 }
 
@@ -105,10 +92,11 @@ form {
 	
 }
 .gender-container .choose-gender-box #username {
-	font-size: 13px;
-	padding: 1.5% 0 0;
+	font-size: 26.47px;
+	width:70px;
 	border: 0px solid #000000;
-	color: black;
+	color: #3a2d27;
+	font-family: "Georgia";
 	background-color: transparent;
 }
 .gender-container .choose-gender-box .male{
@@ -118,48 +106,68 @@ form {
     background-color: transparent;
     background-image: url("/img/hc-theme/male-gender.png");
     background-origin: padding-box;
-    background-position: 98% 0;
+    background-position: -128px 0;
     background-repeat: no-repeat;
     height: 32%;
     width: 9%;
-    margin: 0 0 0 41%;
+   margin: 122px 0 0 42%;
 }
 
 .gender-container .choose-gender-box .male .s{
-		border: 1 solid #000000;
-
-    background-position: 3% 0;
+    background-position: -6px 0;
 }
 
 .gender-container .choose-gender-box .female{
-		background-attachment: fixed;
+		border: 0px solid #000000;
+		background-attachment: inherit;
     background-clip: inherit;
     background-color: transparent;
-    background-image: url("/img/hc-theme/female-radio-n.png");
+    background-image: url("/img/hc-theme/female-gender.png");
     background-origin: padding-box;
-    background-position: 51% -27%;
+    background-position: -124px 0;
     background-repeat: no-repeat;
-    height: 31%;
-    width: 10%;
+    height: 32%;
+    margin: 0 0 0 1%;
+    width: 122px;
 }
     
 }
 
-.gender-container .choose-gender-box .female s{
-    background-image: url("/img/hc-theme/female-radio-s.png");
+.gender-container .choose-gender-box .female .s{
+     background-position: -2px 0;
+
 }
 
 
 .gender-container .choose-gender-box .username-box {
-	   background: url("/img/hc-theme/username-box.png") repeat scroll 53% -87% transparent;
-    height: 51%;
+	/*
+	  background: url("/img/hc-theme/username-box.png") repeat fixed 145px 4px transparent;
+    border: 1px solid white;
+    float: none;
+    height: 84px;
+    margin: 0 4px 7px 498px;
+    width: 313px;
+    */
+     background-attachment: fixed;
+    background-clip: inherit;
+    background-color: transparent;
+    background-image: url("/img/hc-theme/username-box.png");
+    background-origin: padding-box;
+    background-position: 55% -1%;
+    background-repeat: no-repeat;
+    border: 0 solid #000000;
+    height: 20%;
+    margin: 0;
+    width: 62%;
 }
 
-.gender-container .choose-gender-box .username-box #submit {
-		border: 0px solid #000000;
-	  background:transparent;
-    height: 31px;
-    width: 53px;
+.gender-container .choose-gender-box #submit {
+		 background: none repeat scroll 0 0 transparent;
+    border: 0px solid #000000;
+    float: right;
+    height: 35px;
+    margin: -29px 2px 3px 14px;
+    width: 61px;
 }
 
 .homepage-container .login-container .sb-twitter {

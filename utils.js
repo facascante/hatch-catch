@@ -237,27 +237,25 @@ exports.assignRoom = function(req,res,client, fn){
 		    publicRooms.sort(exports.caseInsensitiveSort);
 
 		    publicRooms.forEach(function(roomKey, index) {
-		      client.hgetall('rooms:' + roomKey + ':info', function(err, room) {
-		        // prevent for a room info deleted before this check
-		        if(!err && room && Object.keys(room).length) {
-		        	
-		          if(room.online == 1){
-		            
-		          }
-		          // add room info
-		          rooms.push({
-		            key: room.key || room.name, // temp
-		            name: room.name,
-		            online: room.online || 0
-		          });
+		    	client.smembers('rooms:' + roomKey + ':online', function(err, online_users) {
+		    	    var users = [];
+		    	    online_users.forEach(function(userKey, index) {
+		    	      client.get('users:' + userKey + ':status', function(err, status) {
+		    	        var msnData = userKey.split(':')
+		    	          , username = msnData.length > 1 ? msnData[1] : msnData[0]
+		    	          , provider = msnData.length > 1 ? msnData[0] : "twitter";
 
-		          // check if last room
-		          if(rooms.length == len) fn(rooms);
-		        } else {
-		          // reduce check length
-		          len -= 1;
-		        }
-		      });
+		    	        users.push({
+		    	            username: username,
+		    	            provider: provider,
+		    	            status: status || 'available'
+		    	        });
+		    	      });
+		    	    });
+
+		    	    fn(users);
+
+		    	  });
 		    });
 		  });
 	}

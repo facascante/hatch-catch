@@ -113,34 +113,35 @@ form {
 }
 .gender-container .choose-gender-box .male{
 		border: 0px solid #000000;
-    background-attachment: fixed;
+		background-attachment: inherit;
     background-clip: inherit;
     background-color: transparent;
-    background-image: url("/img/hc-theme/male-radio-n.png");
+    background-image: url("/img/hc-theme/male-gender.png");
     background-origin: padding-box;
-    background-position: 53% -19%;
+    background-position: 98% 0;
     background-repeat: no-repeat;
-    float: left;
-    height: 30%;
-    width: 50%;
+    height: 32%;
+    width: 9%;
+    margin: 0 0 0 41%;
 }
 
-.gender-container .choose-gender-box .male s{
-    background-image: url("/img/hc-theme/male-radio-s.png");
+.gender-container .choose-gender-box .male .s{
+		border: 1 solid #000000;
+
+    background-position: 3% 0;
 }
 
 .gender-container .choose-gender-box .female{
-		border: 0px solid #000000;
-    background-attachment: fixed;
+		background-attachment: fixed;
     background-clip: inherit;
     background-color: transparent;
     background-image: url("/img/hc-theme/female-radio-n.png");
     background-origin: padding-box;
-    background-position: 53% -19%;
+    background-position: 51% -27%;
     background-repeat: no-repeat;
-    float: right;
-    height: 30%;
-    width: 50%;
+    height: 31%;
+    width: 10%;
+}
     
 }
 

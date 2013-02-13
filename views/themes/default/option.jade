@@ -21,17 +21,17 @@ block content
 		include footer
 		script
 			$('#but-male').click(function(ev) {
-				$('#but-male').not(this).css('background-image', 'url(/img/hc-theme/male-radio-n.png)').removeClass('s');
+				$('#but-male').not(this).css('background-position', '98% 0').removeClass('s');
 				if(!$(this).is('.s')){
-					$(this).css('background-image', 'url(/img/hc-theme/male-radio-s.png)').addClass('s');
+					$(this).css('background-position', '3% 0').addClass('s');
 					$('#gender-m').attr("checked", true);
 					$('#gender-f').attr("checked", false);
 					$('#but-female').css('background-image', 'url(/img/hc-theme/female-radio-n.png)').removeClass('s');
 				}
 				else{
 					$('#gender-m').attr("checked", false);
-					$(this).css('background-image', 'url(/img/hc-theme/male-radio-n.png)').removeClass('s');
-					$('#but-female').css('background-image', 'url(/img/hc-theme/female-radio-n.png)').removeClass('s');
+					$(this).css('background-position', 'scroll').removeClass('s');
+					$('#but-female').css('background-position', '98% 0').removeClass('s');
 				}
 			});
 			$('#but-female').click(function(ev) {

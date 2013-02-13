@@ -1,9 +1,9 @@
 {
   "auth": {
     "twitter": {
-      "consumerkey" : "yourConsumerKey",
-      "consumersecret" : "yourSecretKey",
-      "callback" : "http://54.251.65.218:6789/auth/twitter/callback"
+      "consumerkey" : "H3B7gCJoadNeaqeoK5AU8g",
+      "consumersecret" : "CVwW1nJ6dFjQ6QSXVnKwHNldIaCIUuCgDZCpJEw1v2U",
+      "callback" : "http://172.20.10.4:6789/auth/twitter/callback"
     },
     "facebook": {
       "clientid" : "447241648681212",

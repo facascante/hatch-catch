@@ -18,6 +18,16 @@ body.gender-page {
     background-repeat: no-repeat;
     background-size: 100% 110%;
 }
+body.chat-page {
+	  margin:0 0 0 0;
+    background-attachment: fixed;
+    background-clip: border-box;
+    background-color: transparent;
+    background-image: url("/img/hc-theme/chat-bg.png");
+    background-origin: padding-box;
+    background-repeat: no-repeat;
+    background-size: 100% 110%;
+}
 .header-wrapper {
   background: url("/img/hc-theme/header-line.png") repeat-x scroll 0 -30px transparent;
   background-size: contain;
@@ -85,7 +95,13 @@ body.gender-page {
 }
 
 .gender-container .choose-gender-box .username-wrapper {
-	padding: 12.5% 38% 29%;
+	padding: 12.5% 38% 29% 40%;
+	
+}
+
+form {
+	background-color: transparent;
+	height:100%;
 	
 }
 .gender-container .choose-gender-box #username {
@@ -136,6 +152,13 @@ body.gender-page {
 .gender-container .choose-gender-box .username-box {
 	   background: url("/img/hc-theme/username-box.png") repeat scroll 53% -87% transparent;
     height: 51%;
+}
+
+.gender-container .choose-gender-box .username-box #submit {
+		border: 0px solid #000000;
+	  background:transparent;
+    height: 31px;
+    width: 53px;
 }
 
 .homepage-container .login-container .sb-twitter {

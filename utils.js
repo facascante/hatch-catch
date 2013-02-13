@@ -42,7 +42,7 @@ exports.roomExists = function(req, res, client, fn) {
     if(!err && roomKey) {
       res.redirect( '/' + roomKey );
     } else {
-      fn()
+      fn();
     }
   });
 };
@@ -117,7 +117,6 @@ exports.getPublicRoomsInfo = function(client, fn) {
  */
 
 exports.getUsersInRoom = function(req, res, client, room, fn) {
-	console.log('rooms:' + req.params.id + ':online');
   client.smembers('rooms:' + req.params.id + ':online', function(err, online_users) {
     var users = [];
 
@@ -174,6 +173,7 @@ exports.enterRoom = function(req, res, room, users, rooms, status){
     user: {
       nickname: req.user.username,
       provider: req.user.provider,
+      gender: req.user.gender,
       status: status
     },
     users_list: users
@@ -220,3 +220,45 @@ exports.caseInsensitiveSort = function (a, b) {
 
    return ret;
 };
+
+/*
+ * Assign a room to visitor
+ */
+
+exports.assignRoom = function(req,res,client, fn){
+	
+	if(req.user.gender == 'male'){
+		client.smembers('balloons:public:rooms', function(err, publicRooms) {
+		    var rooms = []
+		      , len = publicRooms.length;
+		    if(!len) fn([]);
+
+		    publicRooms.sort(exports.caseInsensitiveSort);
+
+		    publicRooms.forEach(function(roomKey, index) {
+		      client.hgetall('rooms:' + roomKey + ':info', function(err, room) {
+		        // prevent for a room info deleted before this check
+		        if(!err && room && Object.keys(room).length) {
+		        	
+		          if(room.online == 1){
+		            
+		          }
+		          // add room info
+		          rooms.push({
+		            key: room.key || room.name, // temp
+		            name: room.name,
+		            online: room.online || 0
+		          });
+
+		          // check if last room
+		          if(rooms.length == len) fn(rooms);
+		        } else {
+		          // reduce check length
+		          len -= 1;
+		        }
+		      });
+		    });
+		  });
+	}
+};
+

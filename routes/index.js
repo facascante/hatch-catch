@@ -19,14 +19,7 @@ app.get('/', function(req, res, next) {
         'users:' + req.user.provider + ":" + req.user.username
       , req.user
     );
-    console.log(req.user);
-    if(!req.user.codename){
-    	res.redirect('/option');
-    }
-    else{
-    	res.redirect('/rooms');
-    }
-    
+    res.redirect('/option');
   } else{
     res.render('index');
   }
@@ -69,9 +62,16 @@ app.get('/logout', function(req, res){
 
 app.all('/option', utils.restrict, function(req, res) {
 	if(req.method == "POST"){
-		req.user.code_name = req.body.code_name;
-		res.redirect('/waiting');
-		
+		console.log(req.body);
+		req.user.gender = req.body['gender-m'] || req.body['gender-f'] || req.user.gender;
+		req.user.code_name = req.body.username || req.user.username;
+		if(req.user.gender && req.body.username){
+			console.log('ok');
+			res.redirect('/chat');
+		}
+		else{
+			res.redirect('/option');
+		}
 	}
 	else{
 		res.render('option', {users:req.user });
@@ -104,10 +104,10 @@ app.all('/score', utils.restrict, function(req, res) {
  * Chat Window Page
  */
 
-app.all('/cwindow', utils.restrict, function(req, res) {
+app.all('/chat', utils.restrict, function(req, res) {
   utils.getPublicRoomsInfo(client, function(rooms) {
 	
-    res.render('cwindow', { rooms: rooms, users:req.user });
+    res.render('chat', { rooms: rooms, users:req.user });
   });
 });
 

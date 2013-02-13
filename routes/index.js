@@ -139,6 +139,7 @@ app.get('/rooms', utils.restrict, function(req, res) {
 
 		res.render('room_list', { rooms: rooms, users:req.user });
 	
+		
   });
 });
 

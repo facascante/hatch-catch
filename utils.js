@@ -225,6 +225,7 @@ exports.caseInsensitiveSort = function (a, b) {
  * Assign a room to visitor
  */
 
+
 exports.assignRoom = function(req,res,client, fn){
 	
 	if(req.user.gender == 'male'){

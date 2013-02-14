@@ -16,7 +16,7 @@ body.gender-page {
     background-image: url("/img/hc-theme/gender-bg.png");
     background-origin: padding-box;
     background-repeat: no-repeat;
-    background-size: 100% 110%;
+    background-size: 100% 100%;
 }
 body.chat-page {
 	  margin:0 0 0 0;
@@ -26,7 +26,7 @@ body.chat-page {
     background-image: url("/img/hc-theme/chat-bg.png");
     background-origin: padding-box;
     background-repeat: no-repeat;
-    background-size: 100% 110%;
+    background-size: 100% 100%;
 }
 .header-wrapper {
   background: url("/img/hc-theme/header-line.png") repeat-x scroll 0 -30px transparent;

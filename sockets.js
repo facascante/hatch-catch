@@ -50,6 +50,8 @@ io.configure(function() {
 io.sockets.on('connection', function (socket) {
   var hs = socket.handshake
     , nickname = hs.balloons.user.username
+    , gender = hs.balloons.user.gender
+    , codename = hs.balloons.user.code_name
     , provider = hs.balloons.user.provider
     , userKey = provider + ":" + nickname
     , room_id = hs.balloons.room
@@ -57,7 +59,6 @@ io.sockets.on('connection', function (socket) {
     // Chat Log handler
     , chatlogFileName = './chats/' + room_id + (now.getFullYear()) + (now.getMonth() + 1) + (now.getDate()) + ".txt"
     , chatlogWriteStream = fs.createWriteStream(chatlogFileName, {'flags': 'a'});
-
   socket.join(room_id);
 
   client.sadd('sockets:for:' + userKey + ':at:' + room_id, socket.id, function(err, socketAdded) {
@@ -92,6 +93,8 @@ io.sockets.on('connection', function (socket) {
       
       io.sockets.in(room_id).emit('new msg', {
         nickname: nickname,
+        codename: codename,
+        gender:gender,
         provider: provider,
         msg: data.msg
       });        

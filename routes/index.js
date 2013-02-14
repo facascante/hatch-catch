@@ -64,7 +64,7 @@ app.all('/option', utils.restrict, function(req, res) {
 	if(req.method == "POST"){
 		console.log(req.body);
 		req.user.gender = req.body['gender-m'] || req.body['gender-f'] || req.user.gender;
-		req.user.code_name = req.body.username || req.user.username;
+		req.user.code_name = req.body.username;
 		if(req.user.gender && req.body.username){
 			console.log('ok');
 			res.redirect('/chat');

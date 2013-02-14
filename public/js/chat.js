@@ -20,7 +20,13 @@ $(function() {
   });
 
   socket.on('new msg', function(data) {
-	  $(" .messagewindow ").append("<p class='me-chat'>" + data.msg + "</p>");
+	  if(data.gender == "male"){
+		  $(" .messagewindow ").append("<p class='me-chat'>" + data.msg + "</p>");
+	  }
+	  else{
+		  $(" .messagewindow ").append("<p class='you-chat'>" + data.msg + "</p>");
+	  }
+	  
 	alert(JSON.stringify(data));
   });
 

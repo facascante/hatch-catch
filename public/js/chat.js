@@ -1,4 +1,4 @@
-$(function() {
+	$(function() {
   var USERS = window.USERS = {}
     , windowStatus
     , afkDeliveredMessages = 0
@@ -39,6 +39,7 @@ $(function() {
   });
 
   $("#reply").click(function(){
+
 	  var inputText = $("#message").val().trim();
 	    if(inputText) {
 	      var chunks = inputText.match(/.{1,1024}/g)

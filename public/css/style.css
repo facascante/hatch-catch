@@ -67,7 +67,7 @@ body.chat-page {
 
 .chatwindow{
     position:relative;
-    height:400px; /* if you wish to use all of your space, use
+    height:332px; /* if you wish to use all of your space, use
     position:absolute; top:0;left:0;right:0;bottom:0;
     or drop the chatdwindow div */
 }

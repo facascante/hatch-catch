@@ -106,7 +106,7 @@ app.all('/score', utils.restrict, function(req, res) {
 
 app.all('/chat', utils.restrict, function(req, res) {
   utils.getPublicRoomsInfo(client, function(rooms) {
-	
+	console.log(req.user);
     res.render('chat', { rooms: rooms, users:req.user });
   });
 });

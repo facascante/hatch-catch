@@ -4,4 +4,14 @@ block content
 	body.chat-page
 		.header-wrapper
 			.header
-		include footer
+			.user-header
+				h2 Hi 
+					=users.code_name
+					!
+				a.signout(href="/signout")
+		.chat-container
+			.current-photo
+			.next-photo
+			.previous-photo
+			.chat-view
+			.chat-text

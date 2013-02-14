@@ -14,7 +14,13 @@ block content
 			.next-photo
 			.previous-photo
 			.chat-view
+				.chatwindow
+					.messagewindow
 			.chat-text
 				input#message(type='text', name='message')
 				button#reply(type='button',name='reply')
+	script(defer, src="/js/libs/fancy-box/jquery.fancybox.pack.js")
+	script(defer, src="/js/plugins.js")
+	script(defer, src="/js/libs/ICanHaz.min.js")
+	script(src="/socket.io/socket.io.js")
 	script(defer, src="/js/chat.js") 

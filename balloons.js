@@ -84,5 +84,5 @@ require('./sockets');
  */
 
 process.on('uncaughtException', function(err){
-  console.log('Exception: ' + err.stack);
+console.log('Exception: ' + err.stack);
 });

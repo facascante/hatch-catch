@@ -65,6 +65,46 @@ body.chat-page {
     width: 380px;
  }
 
+.chatwindow{
+    position:relative;
+    height:400px; /* if you wish to use all of your space, use
+    position:absolute; top:0;left:0;right:0;bottom:0;
+    or drop the chatdwindow div */
+}
+.messagewindow{
+    bottom: 68px;
+    overflow: auto;
+    top: 94px;
+}
+.messagewindow{   
+    border: 0px solid white;
+    left: 97px;
+    position: absolute;
+    right: 66px;
+}
+.me-photo{
+		background: none repeat fixed 0 0 black;
+    height: 76px;
+    width: 58%;
+}
+.me-chat{
+	 background-color: transparent;
+    background-image: url("/img/hc-theme/cloud-blue.png");
+    background-position: 56px 4px;
+    background-repeat: no-repeat;
+    height: 37px;
+    padding: 22px 0 0 87px;
+    position: relative;
+    text-align: left;
+    width: 378px;
+}
+.you-chat{
+		background-image: url("/img/hc-theme/cloud-pink.png");
+    height: 56px;
+    position: absolute;
+    width: 298px;
+	
+}
  .header-wrapper .user-header .signout{
 		background: url("/img/hc-theme/out.png") no-repeat scroll 41% -1px transparent;
     border: 0px solid white;

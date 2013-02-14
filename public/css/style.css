@@ -72,9 +72,9 @@ body.chat-page {
     or drop the chatdwindow div */
 }
 .messagewindow{
-    bottom: 68px;
+   bottom: 1px;
     overflow: auto;
-    top: 94px;
+    top: 98px;
 }
 .messagewindow{   
     border: 0px solid white;

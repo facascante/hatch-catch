@@ -82,18 +82,30 @@ body.chat-page {
     position: absolute;
     right: 66px;
 }
-.me-photo{
-		background: none repeat fixed 0 0 black;
-    height: 76px;
-    width: 58%;
+.messagewindow img.leftp{
+	background-color: transparent;
+	 height: 59px;
+    padding: 26px 0 0 7px;
+    position: absolute;
+    text-align: left;
+    width: 65px;
 }
+
+.messagewindow img.rightp{
+	 height: 59px;
+    padding: 26px 0 0 472px;
+    position: absolute;
+    text-align: left;
+    width: 65px;
+}
+
 .me-chat{
 	  background-color: transparent;
     background-image: url("/img/hc-theme/cloud-blue.png");
-    background-position: 56px 4px;
+    background-position: 88px 4px;
     background-repeat: no-repeat;
     height: 37px;
-    padding: 22px 0 0 87px;
+    padding: 22px 0 0 120px;
     position: relative;
     text-align: left;
     width: 378px;
@@ -101,10 +113,10 @@ body.chat-page {
 .you-chat{
 		background-color: transparent;
     background-image: url("/img/hc-theme/cloud-pink.png");
-    background-position: 126px 4px;
+    background-position: 147px 4px;
     background-repeat: no-repeat;
     height: 37px;
-    padding: 22px 0 0 146px;
+    padding: 22px 0 0 169px;
     position: relative;
     text-align: left;
     width: 378px;

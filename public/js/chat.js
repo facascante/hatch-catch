@@ -20,18 +20,22 @@ $(function() {
   });
 
   socket.on('new msg', function(data) {
-	  if(data.gender == "male"){
-		  $(" .messagewindow ").append("<p class='me-chat'>" + data.msg + "</p>");
+	  var photo_url = "";
+	  if(data.provider == 'facebook'){
+		  photo_url = 'http://graph.facebook.com/' + data.nickname + '/picture';
 	  }
 	  else{
-		  $(" .messagewindow ").append("<p class='you-chat'>" + data.msg + "</p>");
+		  photo_url = 'http://graph.facebook.com/' + data.nickname + '/picture';
 	  }
-	  
-	alert(JSON.stringify(data));
+	  if(data.gender == "male"){
+		  $(" .messagewindow ").append("<img class='leftp' src='"+photo_url+"'></img><p class='me-chat'>" + data.msg + "</p>");
+	  }
+	  else{
+		  $(" .messagewindow ").append("<img class='rightp' src='"+photo_url+"'></img><p class='you-chat'>" + data.msg + "</p>");
+	  }
   });
 
   socket.on('user leave', function(data) {
-    alert("user leave");
   });
 
   $("#reply").click(function(){

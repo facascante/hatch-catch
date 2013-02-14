@@ -146,6 +146,29 @@ body.chat-page {
     width: 565px;
  }
  
+   .chat-container .chat-text #message {
+   			background-color: transparent;
+		    border: 0px solid #000000;
+		    color: #3A2D27;
+		    font-family: "Georgia";
+		    font-size: 20px;
+		    margin: 29px 0 0 6%;
+		    width: 375px;
+   }
+   
+   .chat-container .chat-text #reply {
+   			background-color: transparent;
+		    background-image: url("/img/hc-theme/button-reply.png");
+		    background-size: 100% 101%;
+		    border: 0 solid #000000;
+		    color: #3A2D27;
+		    font-family: "Georgia";
+		    font-size: 20px;
+		    height: 53px;
+		    margin: 24px 0 0 4%;
+		    width: 98px;
+   }
+ 
  .header-wrapper .user-header h2 {
 	padding-left:20px;
 	font-size: 20px;
